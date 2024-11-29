@@ -11,4 +11,8 @@ const nomeErro = document.querySelector("#nome_cliente");
 
 cartBtn.addEventListener("click", function(){
     cartModal.style.display = "flex";
+});
+
+closeModalBtn.addEventListener("click", function(){
+    cartModal.style.display = "none";
 })

@@ -211,6 +211,7 @@ body > .modal > .conteudo_modal > .buttons_modal{
 body > .modal > .conteudo_modal > .buttons_modal > #fechar_modal{
     background-color: white;
     border: none;
+    cursor: pointer;
 }
 
 body > .modal > .conteudo_modal > .buttons_modal > #checkout-btn{
@@ -219,6 +220,7 @@ body > .modal > .conteudo_modal > .buttons_modal > #checkout-btn{
     padding: 8px;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 @media (min-width: 768px){
