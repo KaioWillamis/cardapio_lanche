@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    width: 100%;
+    height: 320px;
+    background-color: black;
+}
+
+header > .div_header{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+
+header > .div_header > img{
+    width: 8rem; /* ou 128px8*/
+    height: 8rem;
+    border-radius: 50%;
+    transition: 0.6s;
+}
+
+header > .div_header > img:hover{
+    transform: scale(1.1);
+}
+
+header > .div_header > h1{
+    color: white;
+    margin: 0.5rem 0rem 0.5rem 0rem;
+    font-weight: bold;
+}
+
+header > .div_header > span{
+    color: white;
+    font-weight: 500;
+}
+
+header > .div_header > #div_horario_header{
+    margin-top: 1.25rem;
+    padding: 0.3rem;
+    background-color: rgb(17, 145, 17);
+    border-radius: 20px;
+}
+
+header > .div_header > #div_horario_header > span{
+    color: white;
+    font-weight: 600;
+}
+
+body > h2{
+    text-align: center;
+    margin: 1.75rem;
+}
+
+/*Estelizando o main*/
+
+body > .menu > main{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 7px;
+    justify-items: center;
+    padding: 8px;
+}
+
+body > .menu > main > .produto{
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 10px;
+}
+
+body > .menu > main > .produto > img{
+    width: 7rem; /* ou 128px8*/
+    height: 7rem;
+    border-radius: 8px;
+    transition: 0.6s;
+}
+
+body > .menu > main > .produto > img:hover{
+    transform: scale(1.1);
+}
+
+body > .menu > main > .produto > .descricao_produto > .nome_produto{
+    font-weight: bold;
+}
+
+body > .menu > main > .produto > .descricao_produto > .valor_produto{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+body > .menu > main > .produto > .descricao_produto > .valor_produto > p{
+    font-size: 1.20rem;
+    font-weight: bold;
+}
+
+body > .menu > main > .produto > .descricao_produto > .valor_produto > button{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+@media (min-width: 768px){
+    body > .menu{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    body > .menu > main{
+        grid-template-columns: repeat(2, 1fr); /* Colunas em 2 */
+        justify-items: center; /* Centraliza os itens */
+        width: 70%;
+    }
+}
