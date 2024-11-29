@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RM Delicia</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <!--HEADER-->
@@ -126,12 +127,79 @@
             </div>
             <!--Fim Produto item-->
         </main>
+
+        <div class="titulo_bebidas">
+            <h2>Bebidas</h2>
+        </div>
+
+        <div class="bebidas">
+            <!--Produto item-->
+            <div class="produto">
+                <img src="img/propaganda-de-hamburguer.jpg" alt="">
+                <div class="descricao_produto">
+                    <p class="nome_produto">Lorem ipsum dolor sit amet</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+                    <div class="valor_produto">
+                        <p>R$ 00.00</p>
+                        <button class="adicionar_produto" data-name="" data-price="">
+                            ADD
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--Fim Produto item-->
+
+            <!--Produto item-->
+            <div class="produto">
+                <img src="img/propaganda-de-hamburguer.jpg" alt="">
+                <div class="descricao_produto">
+                    <p class="nome_produto">Lorem ipsum dolor sit amet</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+                    <div class="valor_produto">
+                        <p>R$ 00.00</p>
+                        <button class="adicionar_produto" data-name="" data-price="">
+                            ADD
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--Fim Produto item-->
+        </div>
     </div>
-    <!--MENU-->
+    <!--fim MENU-->
+
+    <!--Modal-->
+    <div class="modal">
+        <div class="conteudo_modal">
+            <h2>Meu carrinho</h2>
+
+            <div id="cart-items"> 
+
+            </div>
+
+            <p>Total: <span id="cart-total">0.00</span></p>
+            <p>Nome e Sobrenome ou Apelido</p>
+
+            <input type="text" placeholder="informe a informação aqui" id="nome">
+            
+            <p id="nome_cliente">Digite seu nome ou apelido!</p>
+
+            <div class="buttons_modal">
+                <button id="fechar_modal">Fechar</button>
+                <button id="checkout-btn">Finalizar pedido</button>
+            </div>
+        </div>
+    </div>
+    <!--Fim Modal-->
 
     <!--FOOTER-->
     <footer>
-
+        <button id="cart-btn">
+            (<span id="cart-count">2</span>)
+            Veja seu carrinho
+        </button>
     </footer>
     <!--FIM FOOTER-->
 </body>

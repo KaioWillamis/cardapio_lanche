@@ -63,14 +63,19 @@ header > .div_header > #div_horario_header > span{
     font-weight: 600;
 }
 
-body > h2{
+h2{
     text-align: center;
     margin: 1.75rem;
 }
 
 /*Estelizando o main*/
+body > .menu{
+    display: flex;
+    flex-direction: column;
+}
 
-body > .menu > main{
+body > .menu > main,
+body > .menu > .bebidas{
     display: grid;
     grid-template-columns: 1fr;
     gap: 7px;
@@ -78,44 +83,142 @@ body > .menu > main{
     padding: 8px;
 }
 
-body > .menu > main > .produto{
+body > .menu > main > .produto,
+body > .menu > .bebidas > .produto{
     display: flex;
     gap: 0.5rem;
     margin-bottom: 10px;
 }
 
-body > .menu > main > .produto > img{
+body > .menu > main > .produto > img,
+body > .menu > .bebidas > .produto > img{
     width: 7rem; /* ou 128px8*/
     height: 7rem;
     border-radius: 8px;
     transition: 0.6s;
 }
 
-body > .menu > main > .produto > img:hover{
+body > .menu > main > .produto > img:hover,
+body > .menu > .bebidas > .produto > img:hover{
     transform: scale(1.1);
 }
 
-body > .menu > main > .produto > .descricao_produto > .nome_produto{
+body > .menu > main > .produto > .descricao_produto > .nome_produto,
+body > .menu > .bebidas > .produto > .descricao_produto > .nome_produto{
     font-weight: bold;
 }
 
-body > .menu > main > .produto > .descricao_produto > .valor_produto{
+body > .menu > main > .produto > .descricao_produto > .valor_produto,
+body > .menu > .bebidas > .produto > .descricao_produto > .valor_produto{
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 8px;
 }
 
-body > .menu > main > .produto > .descricao_produto > .valor_produto > p{
+body > .menu > main > .produto > .descricao_produto > .valor_produto > p,
+body > .menu > .bebidas > .produto > .descricao_produto > .valor_produto > p{
     font-size: 1.20rem;
     font-weight: bold;
 }
 
-body > .menu > main > .produto > .descricao_produto > .valor_produto > button{
+body > .menu > main > .produto > .descricao_produto > .valor_produto > button,
+body > .menu > .bebidas > .produto > .descricao_produto > .valor_produto > button{
     background-color: black;
     color: white;
     border-radius: 5px;
     padding: 5px;
+}
+
+body > footer{
+    width: 100%;
+    height: 6%;
+    background-color: red;
+    padding: 5px;
+    position: fixed;
+    bottom: 0; /* Alinha o footer no bottom da página */
+    left: 0;
+    z-index: 9999; /* Garante que o footer fique acima de todas as camadas */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+body > footer > button{
+    color: white;
+    background-color: red;
+    border: none;
+    font-weight: bold;
+}
+
+body > footer > button > span{
+    color: white;
+    font-weight: bold;
+}
+
+body > .modal{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.393);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+body > .modal > .conteudo_modal{
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+body > .modal > .conteudo_modal > h2{
+    margin: 0px;
+    font-size: 1.40rem;
+}
+
+body > .modal > .conteudo_modal > p{
+    font-weight: bold;
+}
+
+body > .modal > .conteudo_modal > input{
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 1px 2px 5px rgba(144, 144, 144, 0.69);
+    padding: 15px;
+}
+
+body > .modal > .conteudo_modal > #nome_cliente{
+    color: red;
+    display: none;
+}
+
+body > .modal > .conteudo_modal > .buttons_modal{
+    display: flex;
+    justify-content: space-between;
+}
+
+body > .modal > .conteudo_modal > .buttons_modal > #fechar_modal{
+    background-color: white;
+    border: none;
+}
+
+body > .modal > .conteudo_modal > .buttons_modal > #checkout-btn{
+    background-color: green;
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 10px;
 }
 
 @media (min-width: 768px){
@@ -124,9 +227,14 @@ body > .menu > main > .produto > .descricao_produto > .valor_produto > button{
         align-items: center;
         justify-content: center;
     }
-    body > .menu > main{
+    body > .menu > main,
+    body > .menu > .bebidas{
         grid-template-columns: repeat(2, 1fr); /* Colunas em 2 */
         justify-items: center; /* Centraliza os itens */
         width: 70%;
+    }
+
+    body > .modal > .conteudo_modal{
+        width: 600px;
     }
 }
