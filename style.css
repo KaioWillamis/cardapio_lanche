@@ -34,6 +34,7 @@ header > .div_header > img{
     height: 8rem;
     border-radius: 50%;
     transition: 0.6s;
+    cursor: pointer;
 }
 
 header > .div_header > img:hover{
@@ -128,6 +129,7 @@ body > .menu > .bebidas > .produto > .descricao_produto > .valor_produto > butto
     color: white;
     border-radius: 5px;
     padding: 5px;
+    cursor: pointer;
 }
 
 body > footer{
@@ -150,11 +152,13 @@ body > footer > button{
     background-color: red;
     border: none;
     font-weight: bold;
+    cursor: pointer;
 }
 
 body > footer > button > span{
     color: white;
     font-weight: bold;
+    cursor: pointer;
 }
 
 body > .modal{
@@ -221,6 +225,12 @@ body > .modal > .conteudo_modal > .buttons_modal > #checkout-btn{
     border: none;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.div_javascript{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
 @media (min-width: 768px){
