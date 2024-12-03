@@ -91,16 +91,17 @@ function atualizarCarrinho(){
     cartCounter.innerHTML = carrinho.length;
 }
 
-cartItemsContainer.addEventListener("click", function(){
-    if(event.target.classList.contains("romever_carrinho")){
+cartItemsContainer.addEventListener("click", function(event){
+    if(event.target.classList.contains("remover_carrinho")){
         const name = event.target.getAttribute("data-name");
 
         removeItemCart(name);
     }
 });
 
+/*Função para remover item do carrinho*/
 function removeItemCart(name){
-    const index = cart.findIndex(item => item.name === name);
+    const index = carrinho.findIndex(item => item.name === name);
 
     if(index >= 0){
         const item = carrinho[index];
@@ -111,6 +112,36 @@ function removeItemCart(name){
             atualizarCarrinho();
             return;
         }
+
+        carrinho.splice(index, 1);
+        atualizarCarrinho();
     }
 }
 
+nome.addEventListener("input", function(event){
+    let inputValue = event.target.value;
+
+    if(inputValue !==""){
+        nomeErro.style.display = "none";
+    };
+}); 
+
+checkoutBtn.addEventListener("click", function(){
+    if(carrinho.length === 0) return;
+
+    if(nome.value === ""){
+        nomeErro.style.display = "flex";
+        return; 
+    }
+
+    const cartItems = carrinho.map((item) => {
+        return (
+            `${item.nome} Quantidade: (${item.quantity}) Preço: R$${item.price}`
+        ).join("");
+
+        const message = encodeURIComponent(cartItems);
+        const phone = "81997172025";
+
+        window.open(`https://wa.me/${phone}?text=${messagem} Nome: ${nome.value}, "_black"`);
+    });
+});
