@@ -127,8 +127,6 @@ nome.addEventListener("input", function(event){
 }); 
 
 checkoutBtn.addEventListener("click", function(){
-    if(carrinho.length === 0) return;
-
     if(nome.value === ""){
         nomeErro.style.display = "flex";
         return; 
@@ -136,12 +134,11 @@ checkoutBtn.addEventListener("click", function(){
 
     const cartItems = carrinho.map((item) => {
         return (
-            `${item.nome} Quantidade: (${item.quantity}) Preço: R$${item.price}`
-        ).join("");
-
+            `${item.name} Quantidade: (${item.quantity}) Preço: R$${item.price} \n`
+        )
+    }).join("");
         const message = encodeURIComponent(cartItems);
-        const phone = "81997172025";
+        const phone = "8196306767";
 
-        window.open(`https://wa.me/${phone}?text=${messagem} Nome: ${nome.value}, "_black"`);
-    });
+        window.open(`https://wa.me/${phone}?text=${message} Nome: ${nome.value}`, "_black");
 });
